@@ -1,7 +1,12 @@
-public class Players {
+import java.io.IOException;
 
+public class Players {
     public void setPlayerBattleMap(int[][] playerBattleMap) {
         this.playerBattleMap = playerBattleMap;
+    }
+
+    public int[][] getPlayerBattleMap() {
+        return playerBattleMap;
     }
 
     private int[][] playerBattleMap = new int[10][10];
@@ -42,4 +47,17 @@ public class Players {
             System.out.println();
         }
     }
+    public void playerShoot() throws IOException {
+        setShoot(new BattleShootInput());
+    }
+
+    public String getShoot() {
+        return shoot;
+    }
+
+    public void setShoot(BattleShootInput shoot) {
+        this.shoot = shoot.getShoot();
+    }
+
+    private String shoot;
 }

@@ -8,6 +8,16 @@ class BattleField10x10 {
 
     private static int[][] shipPositionOnBattleMap;
 
+    public static int[][] getShipPosition() {
+        return shipPosition;
+    }
+
+    public static void setShipPosition(int[][] shipPosition) {
+        BattleField10x10.shipPosition = shipPosition;
+    }
+
+    private static int[][] shipPosition;
+
     public static int[][] getBattleMapEngagedZones() { return battleMapEngagedZones; }
 
     public static void setBattleMapEngagedZones(int[][] battleMapEngagedZones) {
@@ -36,6 +46,7 @@ class BattleField10x10 {
         else {
             battleShipsPosition(numberOfDecks, decksCoeff, playerBattleMap, battleMapEngagedZones);
         }
+        setShipPosition(shipPositionOnBattleMap);
         shipOnMap(playerBattleMap, shipPositionOnBattleMap);
         engaged(shipPositionOnBattleMap, battleMapEngagedZones);
     }

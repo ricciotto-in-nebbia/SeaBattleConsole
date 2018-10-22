@@ -3,6 +3,7 @@ public class Ships {
         this.playerBattleMap = playerBattleMap;
         this.battleMapEngagedZones = battleMapEngagedZones;
         Ships.FourDeck ships4 = new Ships.FourDeck();
+        ships4.shipPositionPrint();
         Ships.ThreeDeck ships3_1 = new Ships.ThreeDeck();
         Ships.ThreeDeck ships3_2 = new Ships.ThreeDeck();
         Ships.TwoDeck ships2_1 = new Ships.TwoDeck();
@@ -31,16 +32,23 @@ public class Ships {
         private int decksCoeff = 7;
         BattleField10x10 battleField10x10 = new BattleField10x10(numberOfDecks, decksCoeff, getPlayerBattleMap(), getBattleMapEngagedZones());
 
-
-        public void setShipPosition(int[][] shipPosition) {
-            this.shipPosition = shipPosition;
-        }
-
         public int[][] getShipPosition() {
             return shipPosition;
         }
 
-        private int[][] shipPosition;
+        private int[][] shipPosition = BattleField10x10.getShipPosition();
+
+        private void shipPositionPrint(){
+            System.out.println("Позиция четырехпалубного корабля");
+            for (int[] r : getShipPosition()) {
+                for (int ttt : r) {
+                    System.out.print(ttt);
+                }
+                System.out.println();
+            }
+        }
+
+
         int[] decks = {1, 1, 1, 1};
 //        String status = integrityСheck(decks);
 //
@@ -51,6 +59,22 @@ public class Ships {
         private int numberOfDecks = 3;
         private int decksCoeff = 8;
         BattleField10x10 battleField10x10 = new BattleField10x10(numberOfDecks, decksCoeff,  getPlayerBattleMap(), getBattleMapEngagedZones());
+
+        public int[][] getShipPosition() {
+            return shipPosition;
+        }
+
+        private int[][] shipPosition = BattleField10x10.getShipPosition();
+
+        private void shipPositionPrint(){
+            for (int[] r : getShipPosition()) {
+                for (int ttt : r) {
+                    System.out.print(ttt);
+                }
+                System.out.println();
+            }
+        }
+
         int[] decks = {1, 1, 1};
 //        String status = integrityСheck(decs);
 
@@ -62,6 +86,22 @@ public class Ships {
         int numberOfDecks = 2;
         int decksCoeff = 9;
         BattleField10x10 battleField10x10 = new BattleField10x10(numberOfDecks, decksCoeff,  getPlayerBattleMap(), getBattleMapEngagedZones());
+
+        public int[][] getShipPosition() {
+            return shipPosition;
+        }
+
+        private int[][] shipPosition = BattleField10x10.getShipPosition();
+
+        private void shipPositionPrint(){
+            for (int[] r : getShipPosition()) {
+                for (int ttt : r) {
+                    System.out.print(ttt);
+                }
+                System.out.println();
+            }
+        }
+
         int[] decks = {1, 1};
 //        String status = integrityСheck(decs);
 
@@ -73,6 +113,22 @@ public class Ships {
         int numberOfDecks = 1;
         int decksCoeff = 10;
         BattleField10x10 battleField10x10 = new BattleField10x10(numberOfDecks, decksCoeff,  getPlayerBattleMap(), getBattleMapEngagedZones());
+
+        public int[][] getShipPosition() {
+            return shipPosition;
+        }
+
+        private int[][] shipPosition = BattleField10x10.getShipPosition();
+
+        private void shipPositionPrint(){
+            for (int[] r : getShipPosition()) {
+                for (int ttt : r) {
+                    System.out.print(ttt);
+                }
+                System.out.println();
+            }
+        }
+
         int[] decks = {1};
 //        String status = integrityСheck(decs);
 

@@ -19,16 +19,11 @@ public class StartGame {
         System.out.println();
         player2.battleMapEngagedZonesPrint();
 
-//        new PlayGame(player1, player2);
+        new PlayGame(player1, player2, player1.getPlayerBattleMap(), player2.getPlayerBattleMap());
 
         //ЦИКЛ
 
 
-        while (PlayerShootCheck.isHit()) { //пока на поле первого игрока есть 1 или пока на поле второго игрока есть единицы
-            player1.playerShoot();
-            new PlayerShootCheck(player1.getShoot(), player2.getPlayerBattleMap());
-            player2.battleMapPrint();
-        }
 
 //обратиться к методу в Плейрс - который обращется к методу ввода хода первого игрока, заполняет переменную внутри Плейрес
         //вызвать метод ПРОВЕРКА где идет проверка введеных координат с координатами БАТТЛ МАП

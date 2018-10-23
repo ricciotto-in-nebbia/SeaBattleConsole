@@ -1,4 +1,13 @@
 public class PlayerShootCheck {
+    public static boolean isWin() {
+        return PlayerShootCheck.win;
+    }
+
+    public void setWin(boolean win) {
+        this.win = win;
+    }
+
+    private static boolean win = false;
     private String playerShoot;
 
     public int[][] getAnotherPlayerBattleMap() {
@@ -6,14 +15,7 @@ public class PlayerShootCheck {
     }
 
     public void setAnotherPlayerBattleMap(int y, int x) {
-        System.out.println("Y:" + y + ", X:" + x);
         this.anotherPlayerBattleMap[y][x] = 5;
-        for (int[] a : this.anotherPlayerBattleMap ) {
-            for (int b  : a) {
-                System.out.print(b);
-            }
-            System.out.println();
-        }
     }
 
     private int[][] anotherPlayerBattleMap;
@@ -69,8 +71,8 @@ public class PlayerShootCheck {
             setHit(false);
         else {
             setHit(true);
+            System.out.println("Попал!");
             setAnotherPlayerBattleMap(y, x);
-            System.out.println(y + " " + x);
             if (playerWin(this.anotherPlayerBattleMap)) System.out.println("Поздравляю, вы - победили!");
         }
     }
@@ -86,6 +88,7 @@ public class PlayerShootCheck {
                 }
             }
         }
+        setWin(win);
         return win;
     }
 }

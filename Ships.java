@@ -3,7 +3,7 @@ public class Ships {
         this.playerBattleMap = playerBattleMap;
         this.battleMapEngagedZones = battleMapEngagedZones;
         Ships.FourDeck ships4 = new Ships.FourDeck();
-        ships4.shipPositionPrint();
+//        ships4.shipPositionPrint();
         Ships.ThreeDeck ships3_1 = new Ships.ThreeDeck();
         Ships.ThreeDeck ships3_2 = new Ships.ThreeDeck();
         Ships.TwoDeck ships2_1 = new Ships.TwoDeck();

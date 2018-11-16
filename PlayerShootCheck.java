@@ -10,10 +10,6 @@ public class PlayerShootCheck {
     private static boolean win = false;
     private String playerShoot;
 
-    public int[][] getAnotherPlayerBattleMap() {
-        return anotherPlayerBattleMap;
-    }
-
     public void setAnotherPlayerBattleMap(int y, int x) {
         this.anotherPlayerBattleMap[y][x] = 5;
     }
@@ -37,10 +33,9 @@ public class PlayerShootCheck {
     }
 
     private void shootCheck(){
-        char[] shootChars = new char[3];
-        shootChars = this.playerShoot.toCharArray();
-        int x = 0;
-        int y = 0;
+        char[] shootChars = this.playerShoot.toCharArray();
+        int x = -1;
+        int y = -1;
         if (shootChars[0]=='A' || shootChars[0]=='a' || shootChars[0]=='А' || shootChars[0]=='а') x = 0;
         if (shootChars[0]=='B' || shootChars[0]=='b' || shootChars[0]=='Б' || shootChars[0]=='б') x = 1;
         if (shootChars[0]=='C' || shootChars[0]=='c' || shootChars[0]=='В' || shootChars[0]=='в') x = 2;
@@ -63,12 +58,12 @@ public class PlayerShootCheck {
             if (shootChars[1] == '8') y = 7;
             if (shootChars[1] == '9') y = 8;
         }
-        else {
-            if (shootChars[1] == '1' && shootChars[2] == '0') y = 9;
-        }
+        else if (shootChars[1] == '1' && shootChars[2] == '0') y = 9;
 
-        if (anotherPlayerBattleMap[y][x] != 1)
+        if (anotherPlayerBattleMap[y][x] != 1) {
+            System.out.print("Мимо! ");
             setHit(false);
+        }
         else {
             setHit(true);
             System.out.println("Попал!");

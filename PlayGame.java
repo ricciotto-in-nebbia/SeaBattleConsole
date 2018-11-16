@@ -17,7 +17,7 @@ public class PlayGame {
     public void playGame() throws IOException {
         while (!PlayerShootCheck.isWin()) {
             while (true) {
-                System.out.println("Ход первого игрока");
+                System.out.println("Ход первого игрока:");
                 player1.playerShoot();
                 new PlayerShootCheck(player1.getShoot(), player2BattleMap);
                 if (PlayerShootCheck.isWin()) break;
@@ -26,7 +26,7 @@ public class PlayGame {
             }
             if (PlayerShootCheck.isWin()) break;
             while (true) {
-                System.out.println("Ход второго игрока");
+                System.out.println("Ход второго игрока:");
                 player2.playerShoot();
                 new PlayerShootCheck(player2.getShoot(), player1BattleMap);
                 if (PlayerShootCheck.isWin()) break;

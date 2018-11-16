@@ -27,7 +27,7 @@ public class Ships {
     private int[][] battleMapEngagedZones;
 
     private class FourDeck {
-        String shipName = "четырехпалубный корабль";
+        String shipName = "Четырехпалубный корабль";
         private int numberOfDecks = 4;
         private int decksCoeff = 7;
         BattleField10x10 battleField10x10 = new BattleField10x10(numberOfDecks, decksCoeff, getPlayerBattleMap(), getBattleMapEngagedZones());
@@ -40,9 +40,9 @@ public class Ships {
 
         private void shipPositionPrint(){
             System.out.println("Позиция четырехпалубного корабля");
-            for (int[] r : getShipPosition()) {
-                for (int ttt : r) {
-                    System.out.print(ttt);
+            for (int[] y : getShipPosition()) {
+                for (int x : y) {
+                    System.out.print(x);
                 }
                 System.out.println();
             }
@@ -51,11 +51,10 @@ public class Ships {
 
         int[] decks = {1, 1, 1, 1};
 //        String status = integrityСheck(decks);
-//
     }
 
     private class ThreeDeck {
-        String shipName = "трехпалубник";
+        String shipName = "Трехпалубный корабль";
         private int numberOfDecks = 3;
         private int decksCoeff = 8;
         BattleField10x10 battleField10x10 = new BattleField10x10(numberOfDecks, decksCoeff,  getPlayerBattleMap(), getBattleMapEngagedZones());
@@ -67,9 +66,9 @@ public class Ships {
         private int[][] shipPosition = BattleField10x10.getShipPosition();
 
         private void shipPositionPrint(){
-            for (int[] r : getShipPosition()) {
-                for (int ttt : r) {
-                    System.out.print(ttt);
+            for (int[] y : getShipPosition()) {
+                for (int x : y) {
+                    System.out.print(x);
                 }
                 System.out.println();
             }
@@ -82,7 +81,7 @@ public class Ships {
         }
     }
     private class TwoDeck {
-        String shipName = "двупалубник";
+        String shipName = "Двухпалубный корабль";
         int numberOfDecks = 2;
         int decksCoeff = 9;
         BattleField10x10 battleField10x10 = new BattleField10x10(numberOfDecks, decksCoeff,  getPlayerBattleMap(), getBattleMapEngagedZones());
@@ -94,9 +93,9 @@ public class Ships {
         private int[][] shipPosition = BattleField10x10.getShipPosition();
 
         private void shipPositionPrint(){
-            for (int[] r : getShipPosition()) {
-                for (int ttt : r) {
-                    System.out.print(ttt);
+            for (int[] y : getShipPosition()) {
+                for (int x : y) {
+                    System.out.print(x);
                 }
                 System.out.println();
             }
@@ -109,7 +108,7 @@ public class Ships {
         }
     }
     private class OneDeck {
-        String shipName = "однопалубник";
+        String shipName = "Однопалубный корабль";
         int numberOfDecks = 1;
         int decksCoeff = 10;
         BattleField10x10 battleField10x10 = new BattleField10x10(numberOfDecks, decksCoeff,  getPlayerBattleMap(), getBattleMapEngagedZones());
@@ -121,9 +120,9 @@ public class Ships {
         private int[][] shipPosition = BattleField10x10.getShipPosition();
 
         private void shipPositionPrint(){
-            for (int[] r : getShipPosition()) {
-                for (int ttt : r) {
-                    System.out.print(ttt);
+            for (int[] y : getShipPosition()) {
+                for (int x : y) {
+                    System.out.print(x);
                 }
                 System.out.println();
             }

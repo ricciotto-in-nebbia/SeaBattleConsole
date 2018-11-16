@@ -1,13 +1,14 @@
 import java.io.IOException;
 
 public class Players {
+    static int[][] playerOne = new int[10][10];
+    static int[][] playerTwo = new int[10][10];
+
     public void setPlayerBattleMap(int[][] playerBattleMap) {
         this.playerBattleMap = playerBattleMap;
     }
 
-    public int[][] getPlayerBattleMap() {
-        return playerBattleMap;
-    }
+    public int[][] getPlayerBattleMap() { return playerBattleMap; }
 
     private int[][] playerBattleMap = new int[10][10];
 
@@ -28,13 +29,13 @@ public class Players {
     private String name;
 
     private int score;
-    Ships ships = new Ships(this.playerBattleMap, this.battleMapEngagedZones);
 
+    Ships ships = new Ships(this.playerBattleMap, this.battleMapEngagedZones);
 
     public void battleMapPrint() {
         for (int[] battleMapTEMP : this.playerBattleMap) { //вывод карты кораблей
             for (int batlleMapShipPosition : battleMapTEMP) {
-                System.out.print(batlleMapShipPosition+ "\t");
+                System.out.print(batlleMapShipPosition + "\t");
             }
             System.out.println();
         }
@@ -47,13 +48,10 @@ public class Players {
             System.out.println();
         }
     }
-    public void playerShoot() throws IOException {
-        setShoot(new BattleShootInput());
-    }
 
-    public String getShoot() {
-        return shoot;
-    }
+    public void playerShoot() throws IOException { setShoot(new BattleShootInput()); }
+
+    public String getShoot() { return shoot; }
 
     public void setShoot(BattleShootInput shoot) {
         this.shoot = shoot.getShoot();

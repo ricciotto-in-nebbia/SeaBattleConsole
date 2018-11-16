@@ -19,7 +19,30 @@ public class BattleShootInput {
 
     private void seaBattle() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        setShoot(reader.readLine());
-        //добавить проверку строки на правильность формата
+        String s = reader.readLine();
+        if (s.equals("showMaps")) {
+            for(int i = 0; i < Players.playerOne.length; i++) {
+                for(int j = 0; j < Players.playerOne.length; j++) {
+                    System.out.print(Players.playerOne[i][j] + "\t");
+                }
+
+                System.out.print("\t");
+
+                for(int j = 0; j < Players.playerTwo.length; j++) {
+                    System.out.print(Players.playerTwo[i][j] + "\t");
+                }
+                System.out.println();
+            }
+            seaBattle();
+        }
+        else if (validateInputShoot(s)) setShoot(s);
+        else {
+            System.out.println("Повторите ваш ход. \nМожно использовать русский или английский алфавит (прописные или строчные буквы). \nABCDEFGHIJK или АБВГДЕЖЗИК");
+            seaBattle();
+        }
+    }
+
+        private boolean validateInputShoot(String s){
+        return s.matches("^[A-Ja-jА-Еа-еЖ-Иж-иКк]{1}[0-9]{1,2}$");
         }
     }

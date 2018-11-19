@@ -21,15 +21,15 @@ public class BattleShootInput {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s = reader.readLine();
         if (s.equals("showMaps")) {
-            for(int i = 0; i < Players.playerOne.length; i++) {
-                for(int j = 0; j < Players.playerOne.length; j++) {
-                    System.out.print(Players.playerOne[i][j] + "\t");
+            for(int i = 0; i < Players.playerOneMap.length; i++) {
+                for(int j = 0; j < Players.playerOneMap.length; j++) {
+                    System.out.print(Players.playerOneMap[i][j] + "\t");
                 }
 
                 System.out.print("\t");
 
-                for(int j = 0; j < Players.playerTwo.length; j++) {
-                    System.out.print(Players.playerTwo[i][j] + "\t");
+                for(int j = 0; j < Players.playerTwoMap.length; j++) {
+                    System.out.print(Players.playerTwoMap[i][j] + "\t");
                 }
                 System.out.println();
             }

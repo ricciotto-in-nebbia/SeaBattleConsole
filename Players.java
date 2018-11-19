@@ -1,8 +1,8 @@
 import java.io.IOException;
 
 public class Players {
-    static int[][] playerOne = new int[10][10];
-    static int[][] playerTwo = new int[10][10];
+    static int[][] playerOneMap = new int[10][10];
+    static int[][] playerTwoMap = new int[10][10];
 
     public void setPlayerBattleMap(int[][] playerBattleMap) {
         this.playerBattleMap = playerBattleMap;

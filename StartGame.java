@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class StartGame {
     public static void main(String[] args) throws IOException {
-        System.out.println("Для игры используетяся поле 10х10. \nЗначения клеток по-горизонтали: ABCDEFGHIJK или АБВГДЕЖЗИК. \nМожно использовать следующие написания:\"F1\", \"f1\", \"И1\", \"и1\".\nКоманда \"showMaps\" выводит на экран карты игроков.");
+        System.out.println("Для игры используетяся поле 10х10.\nЗначения клеток по-горизонтали: ABCDEFGHIJ или АБВГДЕЖЗИК.\nМожно использовать следующие написания:\"F1\", \"f1\", \"И1\", \"и1\".\nКоманда \"showMaps\" выводит на экран карты игроков.");
         Players player1 = new Players("Первый игрок");
         player1.setPlayerBattleMap(BattleField10x10.getShipPositionOnBattleMap());
         player1.setBattleMapEngagedZones(BattleField10x10.getBattleMapEngagedZones());
@@ -24,7 +24,5 @@ public class StartGame {
 
         new PlayGame(player1, player2, player1.getPlayerBattleMap(), player2.getPlayerBattleMap());
         //добавить вывод "Убил!" когда корабль потоплен
-        // вывод ударов каждый раз
-        //по окончанию игры вывод полей с ударами
     }
 }

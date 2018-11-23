@@ -68,7 +68,25 @@ public class PlayerShootCheck {
             setHit(true);
             System.out.println("Попал!");
             setAnotherPlayerBattleMap(y, x);
-            if (playerWin(this.anotherPlayerBattleMap)) System.out.println("Поздравляю, вы - победили!");
+            if (playerWin(this.anotherPlayerBattleMap)) {
+                System.out.println("Поздравляю, вы - победили!");
+
+                System.out.println("\t\tРасположение кораблей первого игрока\t\t\t\tРасположение кораблей второго игрока");
+                System.out.println("    \tA___B___C___D___E___F___G___H___I___J\t\t\t    A___B___C___D___E___F___G___H___I___J");
+                for(int i = 0; i < Players.playerOneMap.length; i++) {
+                    System.out.print((i+1) + "\t|\t");
+                    for(int j = 0; j < Players.playerOneMap.length; j++) {
+                        System.out.print(Players.playerOneMap[i][j] + "\t");
+                    }
+
+                    System.out.print("\t" + (i+1) + "\t|\t");
+
+                    for(int j = 0; j < Players.playerTwoMap.length; j++) {
+                        System.out.print(Players.playerTwoMap[i][j] + "\t");
+                    }
+                    System.out.println();
+                }
+            }
         }
     }
     private boolean playerWin(int[][] anotherPlayerBattleMap){

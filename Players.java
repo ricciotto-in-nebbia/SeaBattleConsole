@@ -3,34 +3,20 @@ import java.io.IOException;
 public class Players {
     static int[][] playerOneMap = new int[10][10];
     static int[][] playerTwoMap = new int[10][10];
-
-    public void setPlayerBattleMap(int[][] playerBattleMap) {
-        this.playerBattleMap = playerBattleMap;
-    }
-
-    public int[][] getPlayerBattleMap() { return playerBattleMap; }
-
     private int[][] playerBattleMap = new int[10][10];
-
-    public void setBattleMapEngagedZones(int[][] battleMapEngagedZones) {
-        this.battleMapEngagedZones = battleMapEngagedZones;
-    }
-
     private int[][] battleMapEngagedZones = new int[10][10]; //ships and ship's zones
+    Ships ships = new Ships(this.playerBattleMap, this.battleMapEngagedZones);
+    private String name;
+    private String shoot;
 
     public Players(String name) {
         this.name = name;
     }
-
-    public String getName() {
-        return name;
+    public void setPlayerBattleMap(int[][] playerBattleMap) {
+        this.playerBattleMap = playerBattleMap;
     }
-
-    private String name;
-
-    private int score;
-
-    Ships ships = new Ships(this.playerBattleMap, this.battleMapEngagedZones);
+    public int[][] getPlayerBattleMap() { return playerBattleMap; }
+    public void setBattleMapEngagedZones(int[][] battleMapEngagedZones) { this.battleMapEngagedZones = battleMapEngagedZones; }
 
     public void battleMapPrint() {
         for (int[] battleMapTEMP : this.playerBattleMap) { //вывод карты кораблей
@@ -50,12 +36,8 @@ public class Players {
     }
 
     public void playerShoot() throws IOException { setShoot(new BattleShootInput()); }
-
     public String getShoot() { return shoot; }
-
     public void setShoot(BattleShootInput shoot) {
         this.shoot = shoot.getShoot();
     }
-
-    private String shoot;
 }

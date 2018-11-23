@@ -24,7 +24,6 @@ public class StartGame {
 
         new PlayGame(player1, player2, player1.getPlayerBattleMap(), player2.getPlayerBattleMap());
         //добавить вывод "Убил!" когда корабль потоплен
-        // добавить вывод полей игроков по-запросу из консоли showMaps
         // вывод ударов каждый раз
         //по окончанию игры вывод полей с ударами
     }

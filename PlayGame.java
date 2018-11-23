@@ -22,7 +22,6 @@ public class PlayGame {
                 new PlayerShootCheck(player1.getShoot(), player2BattleMap);
                 if (PlayerShootCheck.isWin()) break;
                 if (!PlayerShootCheck.isHit()) break;
-//                player2.battleMapPrint();
             }
             if (PlayerShootCheck.isWin()) break;
             while (true) {
@@ -31,7 +30,6 @@ public class PlayGame {
                 new PlayerShootCheck(player2.getShoot(), player1BattleMap);
                 if (PlayerShootCheck.isWin()) break;
                 if (!PlayerShootCheck.isHit()) break;
-//                player1.battleMapPrint();
             }
         }
     }

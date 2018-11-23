@@ -19,8 +19,9 @@ public class BattleShootInput {
 
     private void seaBattle() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String s = reader.readLine();
-        if (s.equals("showMaps")) {
+        String shoot = reader.readLine();
+        if (shoot.equals("showMaps")) {
+            System.out.println("Расположение кораблей первого игрока\t\tРасположение кораблей второго игрока");
             for(int i = 0; i < Players.playerOneMap.length; i++) {
                 for(int j = 0; j < Players.playerOneMap.length; j++) {
                     System.out.print(Players.playerOneMap[i][j] + "\t");
@@ -35,7 +36,9 @@ public class BattleShootInput {
             }
             seaBattle();
         }
-        else if (validateInputShoot(s)) setShoot(s);
+        else if (validateInputShoot(shoot)) {
+            setShoot(shoot);
+        }
         else {
             System.out.println("Повторите ваш ход. \nМожно использовать русский или английский алфавит (прописные или строчные буквы). \nABCDEFGHIJK или АБВГДЕЖЗИК");
             seaBattle();

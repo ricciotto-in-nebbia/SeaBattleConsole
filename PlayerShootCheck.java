@@ -71,19 +71,12 @@ public class PlayerShootCheck {
             if (playerWin(this.anotherPlayerBattleMap)) {
                 System.out.println("Поздравляю, вы - победили!");
 
-                System.out.println("\t\tРасположение кораблей первого игрока\t\t\t\tРасположение кораблей второго игрока");
-                System.out.println("    \tA___B___C___D___E___F___G___H___I___J\t\t\t    A___B___C___D___E___F___G___H___I___J");
+                System.out.println("Расположение кораблей первого игрока\t\tРасположение кораблей второго игрока");
+                System.out.println("a\tb\tc\td\te\tf\tg\th\ti\tj\t\ta\tb\tc\td\te\tf\tg\th\ti\tj");
                 for(int i = 0; i < Players.playerOneMap.length; i++) {
-                    System.out.print((i+1) + "\t|\t");
-                    for(int j = 0; j < Players.playerOneMap.length; j++) {
-                        System.out.print(Players.playerOneMap[i][j] + "\t");
-                    }
-
-                    System.out.print("\t" + (i+1) + "\t|\t");
-
-                    for(int j = 0; j < Players.playerTwoMap.length; j++) {
-                        System.out.print(Players.playerTwoMap[i][j] + "\t");
-                    }
+                    for(int j = 0; j < Players.playerOneMap.length; j++) { System.out.print(Players.playerOneMap[i][j] + "\t"); }
+                    System.out.print("\t");
+                    for(int j = 0; j < Players.playerTwoMap.length; j++) { System.out.print(Players.playerTwoMap[i][j] + "\t"); }
                     System.out.println();
                 }
             }
